@@ -1,0 +1,14 @@
+1. eureka
+    1. 服务注册
+    2. 服务提供
+2. Ribbon
+    1. 发现服务
+    2. 消费服务
+3. Hystrix
+    1. 服务保护
+4. Feign
+    1. 整合Ribbon+Hystrix
+5. Zuul
+    1. API网关
+6. Apollo
+    1. 配置中心
