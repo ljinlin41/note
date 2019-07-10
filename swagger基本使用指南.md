@@ -13,7 +13,7 @@
     </dependency>
     ```
 2. SpringBoot配置  
-    1. 新建Swagger2.Java类，请确保放在能被SpringBoot扫描到的位置  
+    1. 新建Swagger2.java类，请确保放在能被SpringBoot扫描到的位置  
     
     ```
     @Configuration
