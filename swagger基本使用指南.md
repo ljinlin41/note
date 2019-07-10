@@ -72,4 +72,51 @@
         2. 注解位置: 方法
         3. 注解属性
             1. @ApiImplicitParam组成的列表
+            
+5. 代码示例
+    ```
+    @RestController
+    @Api(tags = "TestController") // 注意不要带中文，扩展时按钮无效
+    public class HomeController {
+        
+        @ApiOperation(value="hello", notes="无参数GET请求测试")
+        @GetMapping("/hello")
+        public String hello() {
+            return "Hello World!";
+        }
+    
+        @ApiOperation(value = "hello2", notes = "单简单参数")
+        @ApiImplicitParam(name = "name", value = "姓名", paramType = "query", dataType = "String")
+        @GetMapping("/hello2")
+        public String hello2(@RequestParam String name) {
+            return "Hello " + name;
+        }
+    
+        @ApiOperation(value = "hello3", notes = "多简单参数")
+        @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "姓名", paramType = "query", dataType = "string"),
+            @ApiImplicitParam(name = "age", value = "年龄", paramType = "query", dataType = "int")
+        })
+        @GetMapping("/hello3")
+        public String hello3(@RequestParam String name, @RequestParam Integer age) {
+            return "Hello " + name + ", age " + age.toString();
+        }
+    
+        @ApiOperation(value = "hello4", notes = "传递对象参数")
+        @ApiImplicitParam(name = "person", value = "人", paramType = "body", dataType = "Person")
+        @PostMapping("/hello4")
+        public String hello4(@RequestBody Person person) {
+            return "Hello, " + person.getName() + " " + person.getAge();
+        }
+    
+        @ApiOperation(value = "hello5", notes = "传递集合参数")
+        @ApiImplicitParam(name = "persons", value = "集合列表", paramType = "body", dataType = "ArrayList<String>")
+        @PostMapping("/hello5")
+        public String hello5(@RequestBody ArrayList<String> persons) {
+            StringBuilder sb = new StringBuilder();
+            persons.stream().forEach(t -> sb.append(t.toString() + "\n"));
+            return sb.toString();
+        }
+    }
+    ```
     
