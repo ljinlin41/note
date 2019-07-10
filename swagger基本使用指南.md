@@ -61,7 +61,7 @@
         3. 注解属性
             1. name = "" // 方法或接口的形参, 注意要与方法的参数名称相同
             2. value = "" // 对参数的描述
-            3. paramType = "" // 参数传递方式，此参数的可选值 ["header", "query", "path", "body", "form"]
+            3. paramType = "" // 参数传递方式，此属性的可选值 ["header", "query", "path", "body", "form"]
                 1. header，使用@RequestHeader获取的参数
                 2. query，使用@RequestParam获取的参数，常用于GET请求
                 3. path，使用@PathVariable获取的参数
