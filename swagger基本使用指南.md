@@ -40,8 +40,7 @@
     }
     ```
 3. API Web地址    
-    1. 此时启动SpringBoot项目，浏览<http://localhost:8080/swagger-ui.html>，可以发现已经有了项目的API信息。
-    但这些信息是swagger自动配置的，如果需要定制更详细的信息，可以使用注解。  
+    1. 此时启动SpringBoot项目，浏览<http://localhost:8080/swagger-ui.html>，可以发现已经有了项目的API信息。但这些信息是swagger自动配置的，如果需要定制更详细的信息，可以使用注解。  
       
 4. 使用注解    
     1. @Api  
