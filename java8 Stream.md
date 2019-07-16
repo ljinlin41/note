@@ -16,7 +16,7 @@
         
         
 4. 终端操作(terminal operation)
-
+    1. collect()
 
 
 5. collect()  
